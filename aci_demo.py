@@ -1,8 +1,4 @@
-"""Does the false-alarm guarantee survive domain shift? Static conformal vs adaptive conformal (ACI).
-Calibrate on SOURCE negatives, then stream NEGATIVE videos of a SHIFTED set (false alarms observed by the operator).
 
-  python aci_demo.py --method evi=evidential:runs/evi/s0.pt --calib feats/dad_clean@calib --target feats/ccd_clean@test
-"""
 import argparse
 
 import numpy as np
