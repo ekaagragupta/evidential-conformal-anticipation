@@ -1,7 +1,4 @@
-"""Temporally consistent synthetic corruptions for dashcam video (numpy uint8 [N,H,W,3], RGB).
-Severity 1..5. Fog and low-light are video-level effects (same haze / gain on every frame);
-noise and rain are re-sampled per frame (sensor noise / falling streaks). Use the SAME corruption seed for
-every method so comparisons are fair. Cite the video-robustness benchmarks (Kinetics-C/UCF101-C style) in the paper."""
+
 import cv2
 import numpy as np
 
