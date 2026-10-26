@@ -1,12 +1,4 @@
-"""Temporal model on top of frozen video features.
 
-TemporalEncoder : causal transformer (a step only sees the past, as in real deployment).
-AnticipationModel : encoder + classification head (risk) + optional regression head (time-to-accident).
-
-kind='softmax'    -> 2 logits, used by the softmax / MC-dropout / deep-ensemble baselines
-kind='evidential' -> 2 logits interpreted as Dirichlet evidence (see uncertainty.py)
-tta ='none' | 'gauss' (mean, log-variance) | 'nig' (gamma, nu, alpha, beta)
-"""
 import torch
 import torch.nn as nn
 

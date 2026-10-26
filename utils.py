@@ -1,4 +1,4 @@
-"""Small shared helpers."""
+
 import random
 
 import numpy as np

@@ -1,11 +1,4 @@
-"""Turns raw network outputs into risk + uncertainty, for every method we compare.
 
-All `unc` values are scaled to roughly [0, 1] so they are comparable across methods:
-  softmax    : predictive entropy / ln2
-  mcdropout / ensemble : mutual information (epistemic) / ln2
-  evidential : Dirichlet vacuity K/S (K=2 classes, S = total strength) -> epistemic
-For time-to-accident (TTA, seconds): mu, tta_epi, tta_alea, tta_var (= epi + alea).
-"""
 import math
 
 import torch

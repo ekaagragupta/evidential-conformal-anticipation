@@ -1,8 +1,4 @@
-"""Fully test-time adaptation (TENT-style) for the temporal model.
-Swin/transformer backbones have LayerNorm, not BatchNorm, so we adapt the LayerNorm affine parameters of the
-temporal encoder by minimising the entropy of the risk prediction on unlabeled target batches.
-EXPERIMENTAL: entropy minimisation can collapse to constant predictions; keep lr small, steps few, and always
-report it as an ablation next to the non-adapted model."""
+
 import copy
 
 import torch

@@ -1,11 +1,4 @@
-"""Train one model (one seed) on cached features.
 
-Examples
-  python train.py --feat_dir feats/dad_clean --kind softmax    --tta gauss --seed 0 --out runs/softmax/s0.pt
-  python train.py --feat_dir feats/dad_clean --kind evidential --tta nig   --seed 0 --out runs/evi/s0.pt
-  # optional DANN with unlabeled target features
-  python train.py ... --kind evidential --tta nig --dann_dir feats/ccd_clean --out runs/evi_dann/s0.pt
-"""
 import argparse
 import itertools
 from pathlib import Path
