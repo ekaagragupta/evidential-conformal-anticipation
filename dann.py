@@ -1,6 +1,4 @@
-"""Domain-adversarial training (Ganin et al. 2016) on top of the temporal encoder.
-A domain classifier sees the video-level (masked-mean) encoder state through a gradient-reversal layer,
-so the encoder is pushed toward domain-invariant features. Target videos are UNLABELED."""
+
 import math
 
 import torch
