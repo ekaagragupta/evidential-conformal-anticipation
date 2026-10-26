@@ -1,10 +1,4 @@
-"""Build meta.csv from a folder layout  ROOT/positive/*.mp4  and  ROOT/negative/*.mp4.
 
-Accident time MUST come from the dataset's own annotation. Provide it with --toa_csv (columns video_id,toa_frame
-in ORIGINAL-video frame indices). If omitted, positives fall back to --toa_from_end frames before the clip end
-(a rough convention for clips trimmed to end just after the accident; check your dataset before using it!).
-Optional --domain_csv (video_id,domain) for weather/lighting tags; otherwise domain = --domain.
-Splits are stratified random: train/val/calib/test = 60/10/10/20 (seeded)."""
 import argparse
 from pathlib import Path
 

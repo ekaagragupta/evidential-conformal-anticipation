@@ -1,10 +1,4 @@
-"""Evaluation metrics (pure numpy, no torch needed).
 
-`P` is a dict of per-video lists/arrays (see evaluate.collect):
-    risk[i], unc[i], (mu[i], tta_var[i])  : arrays of length T_i
-    label[i], toa[i] (step index, -1 for negatives), step_sec[i]
-A "curve" is any per-step alarm score for a video (risk by default; conformal.py builds others).
-"""
 import math
 
 import numpy as np

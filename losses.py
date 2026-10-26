@@ -1,20 +1,4 @@
-"""Training targets and losses.
 
-Targets (build_targets)
-  label_mode='horizon' (default): frame label = 1 if an accident happens within `horizon` seconds.
-        The risk output is then a probability of "accident within H s", which is what ECE/Brier/conformal
-        calibration need to mean something.
-  label_mode='weighted' (DSA-style): label 1 on every pre-accident frame of a positive video, loss weight
-        exp(-seconds_to_accident / tau), so early frames matter less.
-  Frames after the accident are dropped for positive videos. TTA regression only uses positive-video
-  frames within `reg_horizon` seconds of the accident.
-
-Losses
-  softmax    : weighted cross-entropy
-  evidential : Sensoy et al. (2018) Bayes-risk of log-likelihood + annealed KL(Dir(alpha_tilde)||Dir(1))
-  gauss TTA  : heteroscedastic Gaussian NLL
-  nig TTA    : Amini et al. (2020) NIG NLL + |error|*(2nu+alpha) evidence regulariser
-"""
 import math
 
 import torch
