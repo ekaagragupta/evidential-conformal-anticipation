@@ -1,14 +1,4 @@
-"""Frozen Video-Swin-T feature extraction (run ONCE per dataset / corruption; everything else uses the cache).
 
-For every video: resample to --fps, then for each step t take the causal window of the last --win frames
-(first frames are padded by repeating frame 0) and store the 768-d Video-Swin feature. => [T, 768] per video.
-
-meta.csv columns: video_id, path, label (0/1), toa_frame (accident frame in ORIGINAL video; -1 for negatives),
-                  split (train/val/calib/test), domain (free text, e.g. dataset or weather tag)
-
-  python extract_features.py --meta meta.csv --out feats/dad_clean
-  python extract_features.py --meta meta.csv --out feats/dad_fog3 --corruption fog --severity 3
-"""
 import argparse
 import re
 from pathlib import Path

@@ -1,10 +1,4 @@
-"""Dataset over cached per-video features.
 
-A feature directory (written by extract_features.py) contains
-    index.csv   : video_id,label,toa_step,n_steps,step_sec,split,domain
-    <video_id>.npy : float16 array [T, D], one feature vector per time step.
-Every model in this project trains on these cached features, so experiments are cheap.
-"""
 from pathlib import Path
 
 import numpy as np

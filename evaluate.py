@@ -1,19 +1,4 @@
-"""Evaluate methods on a source test set and on shifted sets; calibrate conformal thresholds on source.
 
-Method spec  --method NAME=KIND:ckpt[,ckpt...]     KIND in {softmax, mcdropout, ensemble, evidential}
-Eval spec    --eval NAME=feat_dir@split            (first one is the source domain; it is also used for nothing else)
-Calibration  --calib NAME feat_dir@calib_split     source negatives used to set conformal thresholds
-
-Example
-  python evaluate.py \
-    --method softmax=softmax:runs/softmax/s0.pt \
-    --method mcdrop=mcdropout:runs/softmax/s0.pt \
-    --method ens=ensemble:runs/softmax/s0.pt,runs/softmax/s1.pt,runs/softmax/s2.pt,runs/softmax/s3.pt,runs/softmax/s4.pt \
-    --method evi=evidential:runs/evi/s0.pt \
-    --calib feats/dad_clean@calib \
-    --eval dad=feats/dad_clean@test --eval ccd=feats/ccd_clean@test --eval dad_fog3=feats/dad_fog3@test \
-    --alpha 0.1 --out results.csv
-"""
 import argparse
 import time
 
