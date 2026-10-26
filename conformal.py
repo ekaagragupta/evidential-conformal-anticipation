@@ -1,13 +1,4 @@
-"""Conformal warning policy with a false-alarm guarantee.
 
-Setting: a *false alarm* is any alarm raised on a negative (non-accident) video. For a score curve
-s_t (any deterministic function of risk/uncertainty), let M_v = max_t s_t. Take the n calibration negatives,
-k = ceil((n+1)(1-alpha)) and threshold lam = k-th smallest M. Alarm when s_t > lam.
-If a new negative video is exchangeable with the calibration negatives,  P(false alarm) <= alpha.
-The guarantee holds for ANY score design; uncertainty only changes how much recall / lead time you keep
-at that guaranteed false-alarm level. Under domain shift exchangeability breaks -> use adaptive conformal
-(ACI, Gibbs & Candes 2021), which tracks long-run false-alarm frequency from operator feedback.
-"""
 import math
 
 import numpy as np
